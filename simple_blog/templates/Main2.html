@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+
+	<style type = "text/css">
+		.centerdiv
+		{
+			width: 45%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 50px;
+			text-align: center;
+		}
+		.login{
+			margin-left: auto;
+			margin-right: auto;
+			width: 45%;
+			text-align: center;
+		}
+		.blog{
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 0px;
+			width: 45%;
+			text-align: center;
+		}
+
+		</style>
+
+		<nav class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+			<ul class = "nav navbar-nav">
+				{% if user != None %}
+				<a class="navbar-brand" href="#">{{user.username}}</a>
+				<li><a href="#">Add Blog!</a></li>
+				{% endif %}
+				<li><a href="#">Login!</a></li>
+		</nav>
+		<div class = "page-header centerdiv">
+			<h1>Blog Article</h1>
+		</div>
+
+		<div class = "blog well">
+			{% for blog in blogs %}
+				<div>
+					<div class = "page-header">
+
+						<h3>{{blog.title}}</h3>
+						<small>{{blog.author}}</small>
+					</div>
+					{{blog.blog_content}}
+				</div>
+				{% endfor %}
+                 {{ testvar }}{{" diana" }}
+
+		</div>
+
+
+
+
+
+
+</body>
+</html>
+

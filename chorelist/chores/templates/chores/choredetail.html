@@ -1,0 +1,19 @@
+<h1> {{chore}} </h1>
+
+<p> Due Date: {{chore.due_date}} </p>
+
+<form action="/chores/{{chorelist.id}}/chores/{{chore.id}}/update/" method="post">
+	{%csrf_token %}
+	
+	<label form="complete"> Is Complete</label>
+	{% if chore.complete %}
+		<input type ="checkbox" name="complete" id="complete" checked />
+	{% else %}
+		<input type ="checkbox" name="complete" id="complete" />
+	{% endif %}
+	
+	<br/>
+	<input type="submit" value="Update"/>
+	 
+	
+</form>
